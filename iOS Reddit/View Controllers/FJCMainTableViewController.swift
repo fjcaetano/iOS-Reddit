@@ -49,7 +49,8 @@ class FJCMainTableViewController: UITableViewController {
             self.activityIndicatorView.stopAnimating()
             
             if let safeError = error {
-                let alertController = UIAlertController(title: "Erro", message: "Foo", preferredStyle: .Alert)
+                let localizedDescription = safeError.userInfo?[NSLocalizedDescriptionKey] as? String
+                let alertController = UIAlertController(title: "Erro", message: localizedDescription, preferredStyle: .Alert)
                 let okAction = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
                 
                 alertController.addAction(okAction)
