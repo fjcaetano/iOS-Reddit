@@ -12,8 +12,8 @@ import UIKit
 class FJCSubredditListing: NSObject
 {
     
-    var name: String
-    var authorName: String
+    var name: String?
+    var authorName: String?
     
     var thumbURL: NSURL?
     
@@ -21,8 +21,8 @@ class FJCSubredditListing: NSObject
     
     init(jsonObject: NSDictionary)
     {
-        name = jsonObject["title"] as! String
-        authorName = jsonObject["author"] as! String
+        name = jsonObject["title"] as? String
+        authorName = jsonObject["author"] as? String
         
         if let thumbnailStringURL = jsonObject["thumbnail"] as? String {
             thumbURL = NSURL(string: thumbnailStringURL)
