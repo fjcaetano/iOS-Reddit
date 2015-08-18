@@ -9,32 +9,43 @@
 import UIKit
 
 
-typealias FJCSuccessClosure = ([FJCSubredditListing]!) -> ()
-typealias FJCFailureClosure = (NSError!) -> ()
+typealias FJCCompletionClosure = (listing: [FJCSubredditListing]?, error: NSError?) -> ()
 
 
 class FJCSubredditController: NSObject {
    
-    enum FJCSubredditCategory: String {
+    enum Category: String {
         case Hot = "hot"
         case New = "new"
         case Top = "top"
+        
+        static func fromInt(let idx: Int) -> Category {
+            switch idx {
+            case 0:
+                return .Hot
+                
+            case 1:
+                return .New
+                
+            case 2:
+                return .Top
+                
+            default:
+                return .Hot
+            }
+        }
     }
     
-    // mark - Properties
+    // MARK: - Properties
     
-    private static let _processorQueue = dispatch_queue_create("com.flaviocaetano.Nubank", DISPATCH_QUEUE_CONCURRENT)
+    private static let _processorQueue = dispatch_queue_create("com.flaviocaetano.Reddit", DISPATCH_QUEUE_CONCURRENT)
     
     
-    // mark - Methods
+    // MARK: - Methods
     
-    class func GETiOSListingForCategory(category: FJCSubredditCategory, success: FJCSuccessClosure?, failure:FJCFailureClosure?) -> NSURLSessionDataTask?
+    class func GETiOSListingForCategory(category: Category, completion: FJCCompletionClosure) -> NSURLSessionDataTask?
     {
-        if success == nil && failure == nil {
-            return nil
-        }
-        
-        let url = NSURL(string: "https://reddit.com/r/ios/\(category).json")!
+        let url = NSURL(string: "https://reddit.com/r/ios/\(category.rawValue).json")!
         let session = NSURLSession.sharedSession()
         
         let dataTask = session.dataTaskWithURL(url) { (data, response, error) -> Void in
@@ -46,7 +57,7 @@ class FJCSubredditController: NSObject {
                     
                     dispatch_async(dispatch_get_main_queue()) {
                         
-                        failure?(safeError)
+                        completion(listing: nil, error: safeError)
                         
                     }
                     
@@ -62,7 +73,7 @@ class FJCSubredditController: NSObject {
                     // Dispatch failure on main queue
                     dispatch_async(dispatch_get_main_queue()) {
                         
-                        failure?(safeError)
+                        completion(listing: nil, error: safeError)
                         
                     }
                     
@@ -73,7 +84,7 @@ class FJCSubredditController: NSObject {
                 // To be sent to success closure
                 var result = [FJCSubredditListing]()
                 
-                if let childrenJson = jsonObj?.valueForKeyPath("data.children") as? Array<NSDictionary> {
+                if let childrenJson = jsonObj?.valueForKeyPath("data.children.data") as? Array<NSDictionary> {
                     result = childrenJson.map { (var json) -> FJCSubredditListing in
                         
                         FJCSubredditListing(jsonObject: json)
@@ -86,7 +97,7 @@ class FJCSubredditController: NSObject {
                 // Dispatch success on main queue
                 dispatch_async(dispatch_get_main_queue()) {
                     
-                    success?(result)
+                    completion(listing: result, error: nil)
                     
                 }
                 

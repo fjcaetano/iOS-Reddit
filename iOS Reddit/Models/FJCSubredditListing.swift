@@ -17,7 +17,7 @@ class FJCSubredditListing: NSObject
     
     var thumbURL: NSURL?
     
-    // mark - Methods
+    // MARK: - Methods
     
     init(jsonObject: NSDictionary)
     {
