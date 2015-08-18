@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		F223B3A21B83D75A00A6578F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F223B3A11B83D75A00A6578F /* AppDelegate.swift */; };
-		F223B3A41B83D75A00A6578F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F223B3A31B83D75A00A6578F /* ViewController.swift */; };
 		F223B3A71B83D75A00A6578F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F223B3A51B83D75A00A6578F /* Main.storyboard */; };
 		F223B3A91B83D75A00A6578F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F223B3A81B83D75A00A6578F /* Images.xcassets */; };
 		F223B3AC1B83D75A00A6578F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F223B3AA1B83D75A00A6578F /* LaunchScreen.xib */; };
 		F223B3B81B83D75A00A6578F /* iOS_RedditTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F223B3B71B83D75A00A6578F /* iOS_RedditTests.swift */; };
+		F223B3C31B83D80F00A6578F /* FJCMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F223B3C21B83D80F00A6578F /* FJCMainViewController.swift */; };
+		F223B3C61B83D83300A6578F /* FJCSubredditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F223B3C51B83D83300A6578F /* FJCSubredditController.swift */; };
+		F223B3C91B83DA5D00A6578F /* FJCSubredditListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F223B3C81B83DA5D00A6578F /* FJCSubredditListing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +31,15 @@
 		F223B39C1B83D75A00A6578F /* iOS Reddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Reddit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F223B3A01B83D75A00A6578F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F223B3A11B83D75A00A6578F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F223B3A31B83D75A00A6578F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F223B3A61B83D75A00A6578F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F223B3A81B83D75A00A6578F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F223B3AB1B83D75A00A6578F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F223B3B11B83D75A00A6578F /* iOS RedditTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS RedditTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F223B3B61B83D75A00A6578F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F223B3B71B83D75A00A6578F /* iOS_RedditTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_RedditTests.swift; sourceTree = "<group>"; };
+		F223B3C21B83D80F00A6578F /* FJCMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FJCMainViewController.swift; path = "View Controllers/FJCMainViewController.swift"; sourceTree = "<group>"; };
+		F223B3C51B83D83300A6578F /* FJCSubredditController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FJCSubredditController.swift; path = Controllers/FJCSubredditController.swift; sourceTree = "<group>"; };
+		F223B3C81B83DA5D00A6578F /* FJCSubredditListing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FJCSubredditListing.swift; path = Models/FJCSubredditListing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +81,10 @@
 		F223B39E1B83D75A00A6578F /* iOS Reddit */ = {
 			isa = PBXGroup;
 			children = (
+				F223B3C71B83DA4600A6578F /* Models */,
+				F223B3C41B83D81200A6578F /* Controllers */,
+				F223B3C11B83D7F200A6578F /* View Controllers */,
 				F223B3A11B83D75A00A6578F /* AppDelegate.swift */,
-				F223B3A31B83D75A00A6578F /* ViewController.swift */,
 				F223B3A51B83D75A00A6578F /* Main.storyboard */,
 				F223B3A81B83D75A00A6578F /* Images.xcassets */,
 				F223B3AA1B83D75A00A6578F /* LaunchScreen.xib */,
@@ -110,6 +116,30 @@
 				F223B3B61B83D75A00A6578F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F223B3C11B83D7F200A6578F /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F223B3C21B83D80F00A6578F /* FJCMainViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		F223B3C41B83D81200A6578F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F223B3C51B83D83300A6578F /* FJCSubredditController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		F223B3C71B83DA4600A6578F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F223B3C81B83DA5D00A6578F /* FJCSubredditListing.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +186,7 @@
 		F223B3941B83D75A00A6578F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = FJC;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "Flávio Caetano";
 				TargetAttributes = {
@@ -212,8 +243,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F223B3A41B83D75A00A6578F /* ViewController.swift in Sources */,
 				F223B3A21B83D75A00A6578F /* AppDelegate.swift in Sources */,
+				F223B3C31B83D80F00A6578F /* FJCMainViewController.swift in Sources */,
+				F223B3C61B83D83300A6578F /* FJCSubredditController.swift in Sources */,
+				F223B3C91B83DA5D00A6578F /* FJCSubredditListing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
