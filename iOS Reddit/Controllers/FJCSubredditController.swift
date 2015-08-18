@@ -45,6 +45,18 @@ class FJCSubredditController: NSObject {
     
     class func GETiOSListingForCategory(category: Category, completion: FJCCompletionClosure) -> NSURLSessionDataTask?
     {
+        // Dispatch completion on main queue
+        let safeCompletion: FJCCompletionClosure = { (listing, error) -> () in
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                
+                completion(listing: listing, error: error)
+                
+            }
+            
+        }
+        
+        
         let url = NSURL(string: "https://reddit.com/r/ios/\(category.rawValue).json")!
         let session = NSURLSession.sharedSession()
         
@@ -53,13 +65,7 @@ class FJCSubredditController: NSObject {
             dispatch_async(self._processorQueue) {
                 
                 if let safeError = error {
-                    // Dispatch failure on main queue
-                    
-                    dispatch_async(dispatch_get_main_queue()) {
-                        
-                        completion(listing: nil, error: safeError)
-                        
-                    }
+                    safeCompletion(listing: nil, error: safeError)
                     
                     return
                 }
@@ -70,12 +76,7 @@ class FJCSubredditController: NSObject {
                 
                 
                 if let safeError = jsonError {
-                    // Dispatch failure on main queue
-                    dispatch_async(dispatch_get_main_queue()) {
-                        
-                        completion(listing: nil, error: safeError)
-                        
-                    }
+                    safeCompletion(listing: nil, error: safeError)
                     
                     return
                 }
@@ -93,13 +94,8 @@ class FJCSubredditController: NSObject {
                 }
                 
                 
-                
-                // Dispatch success on main queue
-                dispatch_async(dispatch_get_main_queue()) {
-                    
-                    completion(listing: result, error: nil)
-                    
-                }
+                // Dispatching completion
+                safeCompletion(listing: result, error: nil)
                 
             }
             
