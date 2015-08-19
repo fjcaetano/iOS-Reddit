@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CDA186411F53EF032449871B /* libPods-iOS RedditTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC95484588221DF34CE6FBE9 /* libPods-iOS RedditTests.a */; };
 		F223B3A21B83D75A00A6578F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F223B3A11B83D75A00A6578F /* AppDelegate.swift */; };
 		F223B3A71B83D75A00A6578F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F223B3A51B83D75A00A6578F /* Main.storyboard */; };
 		F223B3A91B83D75A00A6578F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F223B3A81B83D75A00A6578F /* Images.xcassets */; };
@@ -20,6 +21,7 @@
 		F223B3D31B83F79C00A6578F /* FJCSubredditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F223B3C51B83D83300A6578F /* FJCSubredditController.swift */; };
 		F223B3D41B83F79E00A6578F /* FJCMainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F223B3CA1B83E81200A6578F /* FJCMainTableViewController.swift */; };
 		F223B3D51B83F7A200A6578F /* UIImageView+FJCAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = F223B3CD1B83EE7B00A6578F /* UIImageView+FJCAsync.swift */; };
+		F223B3D81B83FC2800A6578F /* UIImageView+FJCAsyncTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F223B3D71B83FC2800A6578F /* UIImageView+FJCAsyncTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		70D3B9D1ECA0B0E41B6B9F9E /* Pods-iOS RedditTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS RedditTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS RedditTests/Pods-iOS RedditTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A965A6F4A12DAD15CCDCA7A4 /* Pods-iOS RedditTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS RedditTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS RedditTests/Pods-iOS RedditTests.release.xcconfig"; sourceTree = "<group>"; };
+		AC95484588221DF34CE6FBE9 /* libPods-iOS RedditTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS RedditTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F223B39C1B83D75A00A6578F /* iOS Reddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Reddit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F223B3A01B83D75A00A6578F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F223B3A11B83D75A00A6578F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +51,8 @@
 		F223B3CA1B83E81200A6578F /* FJCMainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FJCMainTableViewController.swift; path = "View Controllers/FJCMainTableViewController.swift"; sourceTree = "<group>"; };
 		F223B3CD1B83EE7B00A6578F /* UIImageView+FJCAsync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImageView+FJCAsync.swift"; path = "Categories/UIImageView+FJCAsync.swift"; sourceTree = "<group>"; };
 		F223B3D01B83F6CC00A6578F /* FJCSubredditListingTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FJCSubredditListingTest.swift; path = Models/FJCSubredditListingTest.swift; sourceTree = "<group>"; };
+		F223B3D71B83FC2800A6578F /* UIImageView+FJCAsyncTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImageView+FJCAsyncTest.swift"; path = "Categories/UIImageView+FJCAsyncTest.swift"; sourceTree = "<group>"; };
+		F223B3DE1B83FD6E00A6578F /* iOS RedditTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOS RedditTests-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,18 +67,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDA186411F53EF032449871B /* libPods-iOS RedditTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		842AC09F76CFF21AEAFE9A90 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				70D3B9D1ECA0B0E41B6B9F9E /* Pods-iOS RedditTests.debug.xcconfig */,
+				A965A6F4A12DAD15CCDCA7A4 /* Pods-iOS RedditTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D3E085540A8949BCC528C6F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AC95484588221DF34CE6FBE9 /* libPods-iOS RedditTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F223B3931B83D75A00A6578F = {
 			isa = PBXGroup;
 			children = (
 				F223B39E1B83D75A00A6578F /* iOS Reddit */,
 				F223B3B41B83D75A00A6578F /* iOS RedditTests */,
 				F223B39D1B83D75A00A6578F /* Products */,
+				842AC09F76CFF21AEAFE9A90 /* Pods */,
+				D3E085540A8949BCC528C6F1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,8 +138,10 @@
 		F223B3B41B83D75A00A6578F /* iOS RedditTests */ = {
 			isa = PBXGroup;
 			children = (
+				F223B3D61B83FC0E00A6578F /* Extensions */,
 				F223B3CF1B83F6A200A6578F /* Models */,
 				F223B3B51B83D75A00A6578F /* Supporting Files */,
+				F223B3DE1B83FD6E00A6578F /* iOS RedditTests-Bridging-Header.h */,
 			);
 			path = "iOS RedditTests";
 			sourceTree = "<group>";
@@ -165,6 +194,14 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		F223B3D61B83FC0E00A6578F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F223B3D71B83FC2800A6578F /* UIImageView+FJCAsyncTest.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -189,9 +226,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F223B3BE1B83D75A00A6578F /* Build configuration list for PBXNativeTarget "iOS RedditTests" */;
 			buildPhases = (
+				D5A021A67EF73F2BBF257668 /* Check Pods Manifest.lock */,
 				F223B3AD1B83D75A00A6578F /* Sources */,
 				F223B3AE1B83D75A00A6578F /* Frameworks */,
 				F223B3AF1B83D75A00A6578F /* Resources */,
+				439408902C268BDD6759330E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -261,6 +300,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		439408902C268BDD6759330E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS RedditTests/Pods-iOS RedditTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D5A021A67EF73F2BBF257668 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F223B3981B83D75A00A6578F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -279,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F223B3D41B83F79E00A6578F /* FJCMainTableViewController.swift in Sources */,
+				F223B3D81B83FC2800A6578F /* UIImageView+FJCAsyncTest.swift in Sources */,
 				F223B3D11B83F6CC00A6578F /* FJCSubredditListingTest.swift in Sources */,
 				F223B3D21B83F79900A6578F /* FJCSubredditListing.swift in Sources */,
 				F223B3D51B83F7A200A6578F /* UIImageView+FJCAsync.swift in Sources */,
@@ -419,6 +492,7 @@
 		};
 		F223B3BF1B83D75A00A6578F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70D3B9D1ECA0B0E41B6B9F9E /* Pods-iOS RedditTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
@@ -433,6 +507,7 @@
 				INFOPLIST_FILE = "iOS RedditTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iOS RedditTests/iOS RedditTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOS Reddit.app/iOS Reddit";
 			};
@@ -440,6 +515,7 @@
 		};
 		F223B3C01B83D75A00A6578F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A965A6F4A12DAD15CCDCA7A4 /* Pods-iOS RedditTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
@@ -450,6 +526,7 @@
 				INFOPLIST_FILE = "iOS RedditTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iOS RedditTests/iOS RedditTests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOS Reddit.app/iOS Reddit";
 			};
 			name = Release;
@@ -473,6 +550,7 @@
 				F223B3BD1B83D75A00A6578F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F223B3BE1B83D75A00A6578F /* Build configuration list for PBXNativeTarget "iOS RedditTests" */ = {
 			isa = XCConfigurationList;
@@ -481,6 +559,7 @@
 				F223B3C01B83D75A00A6578F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

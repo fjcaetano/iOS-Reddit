@@ -27,6 +27,17 @@ extension UIImageView {
     }
     
     func FJC_setImageWithURL(url: NSURL?, placeholder: UIImage?) {
+        
+        FJC_setImageWithURL(url, placeholder: placeholder) { (data, image, error) -> () in
+            
+            self.image = image
+            
+        }
+        
+    }
+    
+    func FJC_setImageWithURL(url: NSURL?, placeholder: UIImage?, completion:(data: NSData?, image: UIImage?, error: NSError?) -> ()) {
+        
         image = placeholder
         
         if let safeURL = url {
@@ -36,13 +47,11 @@ extension UIImageView {
             let session = NSURLSession.sharedSession()
             dataTask = session.dataTaskWithURL(safeURL) { (data, response, error) -> Void in
                 
-                if let newImage = UIImage(data: data) {
+                let newImage = UIImage(data: data)
+                
+                dispatch_async(dispatch_get_main_queue()) {
                     
-                    dispatch_async(dispatch_get_main_queue()) {
-                        
-                        self.image = newImage
-                        
-                    }
+                    completion(data: data, image: newImage, error: error)
                     
                 }
             }
@@ -50,5 +59,4 @@ extension UIImageView {
             dataTask?.resume()
         }
     }
-    
 }
