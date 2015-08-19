@@ -22,6 +22,8 @@
 		F223B3D41B83F79E00A6578F /* FJCMainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F223B3CA1B83E81200A6578F /* FJCMainTableViewController.swift */; };
 		F223B3D51B83F7A200A6578F /* UIImageView+FJCAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = F223B3CD1B83EE7B00A6578F /* UIImageView+FJCAsync.swift */; };
 		F223B3D81B83FC2800A6578F /* UIImageView+FJCAsyncTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F223B3D71B83FC2800A6578F /* UIImageView+FJCAsyncTest.swift */; };
+		F28D8BCD1B840E8100A67863 /* FJCSubredditControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28D8BCC1B840E8100A67863 /* FJCSubredditControllerTest.swift */; };
+		F28D8BCF1B8410F300A67863 /* mock.json in Resources */ = {isa = PBXBuildFile; fileRef = F28D8BCE1B8410F300A67863 /* mock.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		F223B3D01B83F6CC00A6578F /* FJCSubredditListingTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FJCSubredditListingTest.swift; path = Models/FJCSubredditListingTest.swift; sourceTree = "<group>"; };
 		F223B3D71B83FC2800A6578F /* UIImageView+FJCAsyncTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImageView+FJCAsyncTest.swift"; path = "Categories/UIImageView+FJCAsyncTest.swift"; sourceTree = "<group>"; };
 		F223B3DE1B83FD6E00A6578F /* iOS RedditTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOS RedditTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		F28D8BCC1B840E8100A67863 /* FJCSubredditControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FJCSubredditControllerTest.swift; path = Controllers/FJCSubredditControllerTest.swift; sourceTree = "<group>"; };
+		F28D8BCE1B8410F300A67863 /* mock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mock.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,10 +142,11 @@
 		F223B3B41B83D75A00A6578F /* iOS RedditTests */ = {
 			isa = PBXGroup;
 			children = (
-				F223B3D61B83FC0E00A6578F /* Extensions */,
-				F223B3CF1B83F6A200A6578F /* Models */,
-				F223B3B51B83D75A00A6578F /* Supporting Files */,
 				F223B3DE1B83FD6E00A6578F /* iOS RedditTests-Bridging-Header.h */,
+				F223B3CF1B83F6A200A6578F /* Models */,
+				F28D8BCB1B840E6600A67863 /* Controllers */,
+				F223B3D61B83FC0E00A6578F /* Extensions */,
+				F223B3B51B83D75A00A6578F /* Supporting Files */,
 			);
 			path = "iOS RedditTests";
 			sourceTree = "<group>";
@@ -150,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				F223B3B61B83D75A00A6578F /* Info.plist */,
+				F28D8BCE1B8410F300A67863 /* mock.json */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -200,6 +206,14 @@
 				F223B3D71B83FC2800A6578F /* UIImageView+FJCAsyncTest.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		F28D8BCB1B840E6600A67863 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F28D8BCC1B840E8100A67863 /* FJCSubredditControllerTest.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,6 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F28D8BCF1B8410F300A67863 /* mock.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +367,7 @@
 			files = (
 				F223B3D41B83F79E00A6578F /* FJCMainTableViewController.swift in Sources */,
 				F223B3D81B83FC2800A6578F /* UIImageView+FJCAsyncTest.swift in Sources */,
+				F28D8BCD1B840E8100A67863 /* FJCSubredditControllerTest.swift in Sources */,
 				F223B3D11B83F6CC00A6578F /* FJCSubredditListingTest.swift in Sources */,
 				F223B3D21B83F79900A6578F /* FJCSubredditListing.swift in Sources */,
 				F223B3D51B83F7A200A6578F /* UIImageView+FJCAsync.swift in Sources */,

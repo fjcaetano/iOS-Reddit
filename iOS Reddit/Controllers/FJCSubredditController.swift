@@ -21,9 +21,6 @@ class FJCSubredditController: NSObject {
         
         static func fromInt(let idx: Int) -> Category {
             switch idx {
-            case 0:
-                return .Hot
-                
             case 1:
                 return .New
                 

@@ -61,6 +61,8 @@ class UIImageView_FJCAsyncTest: XCTestCase {
             
             XCTAssertEqual(data!, self.stubbedImageData, "\(data) != \(self.stubbedImageData)")
             
+            XCTAssertTrue(NSThread.isMainThread(), "Not on main queue")
+            
             expectation.fulfill()
         }
     
@@ -81,6 +83,8 @@ class UIImageView_FJCAsyncTest: XCTestCase {
             XCTAssertEqual(imageView.image!, mockImage, "\(imageView.image) != \(mockImage)")
             
             XCTAssertEqual(data!, self.stubbedImageData, "\(data) != \(self.stubbedImageData)")
+            
+            XCTAssertTrue(NSThread.isMainThread(), "Not on main queue")
             
             expectation.fulfill()
         }
